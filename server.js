@@ -10,6 +10,7 @@ try {
 
 http
   .createServer((req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
     if (req.url === "/all" || (req.url === "/all/" && req.method == "GET")) {
       res.writeHead(200, { "Content-type": "application/json" });
       res.end(JSON.stringify(fal));
